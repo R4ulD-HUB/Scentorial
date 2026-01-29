@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upss, te hemos hackeado</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #000;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ff0000;
+      overflow: hidden;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 12vw, 8rem);
+      font-weight: 900;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      color: #ff0000;
+      text-shadow: 
+        0 0 20px #ff0000,
+        0 0 40px #ff0000;
+      animation: blood-flicker 2.5s infinite alternate, shake 0.15s infinite;
+      margin-bottom: 0.5rem;
+    }
+
+    .by {
+      font-size: clamp(1.2rem, 4vw, 2.5rem);
+      color: #c00000;
+      text-shadow: 0 0 15px #c00000;
+      margin-bottom: 2rem;
+      letter-spacing: 4px;
+      animation: pulse 3s infinite;
+    }
+
+    .gstxx { color: #ff1a1a; text-shadow: 0 0 20px #ff1a1a; font-weight: bold; }
+    .azazel { color: #ff3333; text-shadow: 0 0 20px #ff3333; font-weight: bold; }
+
+    .message-box {
+      max-width: 800px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      animation: glitch-heavy 4s infinite;
+    }
+
+    .telegram {
+      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+
+    .telegram a {
+      color: #ff1a1a;
+      text-decoration: none;
+      border: 1px solid #ff1a1a;
+      padding: 10px 20px;
+      transition: all 0.3s;
+    }
+
+    .telegram a:hover {
+      background: #ff1a1a;
+      color: #000;
+      box-shadow: 0 0 20px #ff1a1a;
+    }
+
+    /* Animaciones y Efectos */
+    .blood-drop {
+      position: absolute;
+      width: 8px;
+      height: 25px;
+      background: #8b0000;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      box-shadow: 0 0 10px #ff0000;
+      opacity: 0.7;
+      animation: drip 5s linear infinite;
+    }
+
+    .scanline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 0%, rgba(139, 0, 0, 0.1) 50%, transparent 100%);
+      background-size: 100% 4px;
+      animation: scan 10s linear infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    @keyframes blood-flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.4; }
+    }
+
+    @keyframes shake {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-1px, 1px); }
+      50% { transform: translate(1px, -1px); }
+      75% { transform: translate(-1px, -1px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes glitch-heavy {
+      0%, 100% { transform: none; opacity: 1; }
+      7% { transform: skew(-0.5deg, -0.9deg); opacity: 0.75; }
+      10% { transform: none; opacity: 1; }
+      27% { transform: none; opacity: 1; }
+      30% { transform: skew(0.8deg, -0.1deg); opacity: 0.75; }
+      35% { transform: none; opacity: 1; }
+    }
+
+    @keyframes drip {
+      0% { transform: translateY(-100px); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scanline"></div>
+
+  <div class="blood-drop" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="blood-drop" style="left: 30%; animation-delay: 2s;"></div>
+  <div class="blood-drop" style="left: 60%; animation-delay: 1s;"></div>
+  <div class="blood-drop" style="left: 90%; animation-delay: 3s;"></div>
+
+  <div class="container">
+    <h1>HACKED</h1>
+    
+    <div class="by">
+      BY <span class="gstxx">gstxx</span>
+      <span style="color:#ff0000; margin:0 10px;">&</span>
+      <span class="azazel">AZAZEL</span>
+    </div>
+
+    <div class="message-box">
+      <h2>Tenemos control de tu sistema, no abuses mucho del código con IA</h2>
+      <h2>Tus manejos de permisos son un asco, ya obtuvimos root anteriormente.</h2>
+      <h2>¿Es posible que 2 personas adictas a la terminal te ganen?</h2>
+    </div>
+
+    <div class="telegram">
+      <a href="https://t.me/cortexch" target="_blank">ACCEDER AL CANAL</a>
+    </div>
+  </div>
+</body>
+</html>
